@@ -1,0 +1,56 @@
+<div id ="added-rooms-container">
+
+	<div id="pending-rooms-container">
+		<div class="row">
+			{% if pending %}
+			<h3>Pending Rooms:</h3>
+			{% for room in pending%}
+			<div class="col">
+				<div class="card">
+					<div class="card-body">
+						<span class="card-title">{{room.room_type}}</span>
+						<span class="card-text">
+							<p>{{room.rent}}</p>
+							<p>{{room.city}}</p>
+							
+						</span>
+						
+					</div><!--card-body-->
+				</div><!--card-->
+			</div><!--col-->
+			{% endfor %}
+
+			{% else %}
+			<h3>No pending rooms</h3>
+			{% endif %}
+			
+		</div><!--row-->
+			
+	</div><!--pending-rooms-container-->
+	<div id="approved-rooms-container">
+		<div class="row">
+			{% if approved %}
+			<h3>Approved Rooms:</h3>
+			{% for room in approved_rooms %}
+			<div class="col">
+				<div class="card">
+					<div class="card-body">
+						<span class="card-title">{{room.room_type}}</span>
+						<span class="card-text">
+							<p>{{room.rent}}</p>
+							<p>{{room.city}}</p>
+							
+						</span>
+						<span>Edit</span>
+						<span>Delete</span>
+					</div><!--card-body-->
+				</div><!--card-->
+			</div><!--col-->
+			{% endfor %}
+			{% else %}
+			<h3>No approved rooms</h3>
+			{% endif %}
+			
+		</div><!--row-->
+	</div><!--approved-rooms-container-->	
+</div><!--addded-rooms-container-->

@@ -1,0 +1,32 @@
+<div id="Add-room-form">
+
+	<div id="form-container"  >
+	<form id="form " method="POST" action="{% url 'Add_Room_Form'%}">
+		{% csrf_token%}
+		<div id="fields-container">
+		<div id="fields">
+			<span id="name">Room Type:</span>
+			<span id="input">{{form.room_type}}</span>
+		</div>
+		<div id="fields">
+			<span id="name">City:</span>
+			<span id="input">{{form.city}}</span>
+		</div>
+		<div id="fields">
+			<span id="name">Full Address:</span>
+			<span id="input">{{form.full_address}}</span>
+		</div>
+		<div id="fields">
+			<span id="name">Rent</span>
+			<span id="input">{{form.rent}}</span>
+		</div>
+		<div id="fields">
+			<span id="name">Facilities:</span>
+			<span id="input">{{form.facilities}}</span>
+		</div></div><!--fields-container-->
+		
+
+		<button type="submit">Add</button>
+		
+	</form></div><!--form-ontainer-->
+</div>

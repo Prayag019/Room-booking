@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>dashboard</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+	<script src="https://unpkg.com/htmx.org@2.0.2"></script>
+
+
+
+	<style>
+		a{
+			text-decoration: none;
+			color: white;
+		}
+		#side-nav{
+
+			height: 100vh;
+			min-width: 150px;
+			background-color:#2B3D5B ;
+			color: white;
+			display: flex;
+			flex-direction: column;
+			row-gap: 30px;
+			
+
+		}
+		#nav-body-content{
+			display: flex;
+			flex-direction: column;
+			row-gap: 15px;
+
+		}
+		#container{
+			display:flex;
+			margin: 0px;
+			padding: 0px;
+
+		    
+		}
+		#body{
+			height: 100vh;
+			width: 100%;
+			display: flex;
+			
+
+		}
+		#nav-body-content-holder{
+			white-space: nowrap;
+		}
+		#Add-room-form{
+			flex: 1;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+		}
+		#view-rooms-page{
+			flex: 1;
+		}
+		.card{
+			max-width: 300px;
+			min-width: 250px ;
+		}
+    #fields-container{
+    	display: flex;
+    	flex-direction: column;
+    	row-gap: 20px;
+
+    }
+    #fields{
+    	display: flex;
+    	column-gap: 20px;
+    }
+    #input{
+    	margin-left: 20px;
+    }
+
+		
+	</style>
+    
+</head>
+<body>
+
+
+	<div id="container" class="container-fluid">
+		
+		<div id="side-nav">
+
+			<div id="nav-header-content">
+				<span id="logo"><i class="bi bi-person-lines-fill"></i></span>
+				<span id="name">My DashBoard</span>
+
+			</div><!--nav-header-content-->
+			<div id="nav-body-content">
+				<div id="nav-body-content-holder">
+					<span id="logo"><i class="bi bi-eye-fill"></i></span>
+				<span id="name"><a href="" hx-get="{% url 'room-lists'%}" hx-target='#body' hx-trigger=click>Available Rooms</a></span>
+					
+
+
+				</div><!--nav-body-content-holder-->
+				<div id="nav-body-content-holder">
+					<span id="logo"><i class="bi bi-plus-lg"></i></span>
+				<span id="name"><a href="#" hx-get="{% url 'Add_Room_Form' %}" hx-target='#body' hx-trigger=click >Add Room</a></span>
+				</div><!--nav-body-content-holder-->
+				
+				<div id="nav-body-content-holder">
+					<span id="logo"><i class="bi bi-card-checklist"></i></span>
+				<span id="name"><a href="#" hx-get="{% url 'Added_room' %}" hx-target="#body" hx-trigger=click>Added Rooms</a></span>
+				</div><!--nav-body-content-holder-->
+				<div id="nav-body-content-holder">
+					<span id="logo"><i class="bi bi-journal-check"></i></span>
+<span id="name"><a href="#" hx-get="{% url 'Booked' %}" hx-target="#body" hx-trigger=click >Booked Room</a></span>
+				</div><!--nav-body-content-holder-->
+				<div id="nav-body-content-holder">
+					<span id="logo"><i class="bi bi-box-arrow-left"></i></span>
+				<span id="name"><a href="{% url 'logout' %}" >Log Out</a></span>
+				</div><!--nav-body-content-holder-->
+				
+
+				
+
+
+
+			</div><!--nav-body-content-->
+
+
+			
+
+		</div><!--side-nav-->
+		<div id="body">
+			<h3>welcome to dashboard</h3>
+		</div><!--body-->
+		
+
+	</div><!--container-->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+</html>

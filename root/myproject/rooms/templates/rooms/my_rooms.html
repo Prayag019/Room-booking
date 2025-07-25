@@ -1,0 +1,22 @@
+<div id="my-rooms-body">
+	<div class="row">
+		{% for room in rooms %}
+		<div class="col">
+			<div class="card">
+				
+				<div class="card-body">
+					<h6 class="card-title">{{room.room_type}}</h6>
+					<p class="card-text">{{room.rent}}</p>
+					<p class="card-text">{{room.city}}</p>
+
+
+					
+				</div><!--card-body-->
+			</div><!--card-->
+			
+		</div><!--cols-->
+		{% endfor %}
+		
+	</div><!--row-->
+	
+</div><!--my-rooms-body-->
