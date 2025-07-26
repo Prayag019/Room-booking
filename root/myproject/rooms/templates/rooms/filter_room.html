@@ -1,6 +1,8 @@
 <div id="room-list-body">
 	<div id="room-list-body-header">
-				<form method="GET" action="{% url 'room-lists' %}">
+<form method="GET" action="{% url 'room_lists' %}"
+ hx-get="{% url 'room_lists' %}" hx-target="#result-container"
+hx-trigger="submit">
   <div id="filter-options">
     <h5>Filter By:</h5>
 

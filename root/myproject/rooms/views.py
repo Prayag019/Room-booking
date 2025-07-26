@@ -9,6 +9,11 @@ from django.contrib.auth.decorators import login_required
 def test(request):
     pass
 
+def Available_rooms(request):
+    rooms=Rooms.objects.filter(Q(is_approved=True),Q(is_booked=False))   
+    return render(request,'rooms/room_lists.html',{'rooms':rooms}) 
+
+
 
 def View_Rooms(request):
 
@@ -24,10 +29,9 @@ def View_Rooms(request):
     if room:
         filters &=Q(room_type__icontains=room)   
 
-    rooms=Rooms.objects.filter(filters)   
-          
-    
-    return render(request,'rooms/room_lists.html',{'rooms':rooms})
+    rooms=Rooms.objects.filter(filters)
+
+    return render(request,'rooms/search_result.html',{'rooms':rooms})
     
 def Add_Room_Form_View(request):
     if request.method=='POST':

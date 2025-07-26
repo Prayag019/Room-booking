@@ -1,0 +1,28 @@
+<div id="serach-results">
+	<div class="row">
+		
+		{% for room in rooms %}
+		<div class="col">
+			<div class="card">
+				
+				<div class="card-body">
+					<h6 class="card-title">{{room.room_type}}</h6>
+					<p class="card-text">{{room.rent}}</p>
+					<p class="card-text">{{room.city}}</p>
+					<div id="buttons">
+				<button type="submit"><a href="{% url 'Book' room.id %}">Book</a></button>
+				<button type="submit">View</button></div><!--buttons-->
+
+
+					
+				</div><!--card-body-->
+			</div><!--card-->
+			
+		</div><!--cols-->
+		{% endfor %}
+		
+	</div><!--row-->
+	
+	
+
+</div><!--search-results-->
